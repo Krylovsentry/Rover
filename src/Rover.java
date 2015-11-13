@@ -57,6 +57,8 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
     public void lift() {
 
         this.direction = null;
+
+        //Здесь должен быть взлет
         this.x = -1;
         this.y = -1;
 
