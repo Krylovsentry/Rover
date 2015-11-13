@@ -3,9 +3,10 @@
  */
 public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Liftable {
 
-    private int x;
-    private int y;
+    private Integer x;
+    private Integer y;
     private Direction direction;
+
 
 
     @Override
@@ -41,6 +42,7 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
             this.x = x;
             this.y = y;
             this.direction = direction;
+
         }
 
     }
@@ -57,10 +59,9 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
     public void lift() {
 
         this.direction = null;
+        this.x = null;
+        this.y = null;
 
-        //Здесь должен быть взлет
-        this.x = -1;
-        this.y = -1;
 
     }
 
