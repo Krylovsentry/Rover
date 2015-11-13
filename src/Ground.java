@@ -17,6 +17,7 @@ public class Ground  {
         return landscape[x][y];
 
     }
+
     public Ground(int length,int width){
 
         this.length = length;
@@ -30,10 +31,11 @@ public class Ground  {
                 if (random.nextInt(10)==7){
                     landscape[i][j] = new GroundCell(i,j,CellState.OCCUPIED);
 
+                }else {
+
+                    landscape[i][j] = new GroundCell(i, j, CellState.FREE);
+
                 }
-
-
-              landscape[i][j] = new GroundCell(i,j,CellState.FREE);
             }
 
 
