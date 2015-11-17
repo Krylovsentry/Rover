@@ -3,11 +3,14 @@
  */
 public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Liftable {
 
-    private Integer x;
-    private Integer y;
     private Direction direction;
+    private Point rover_point;
 
 
+    @Override
+    public String toString() {
+        return rover_point.toString() + "Direction: " + direction.toString();
+    }
 
     @Override
     public void move() {
@@ -15,20 +18,50 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
         switch (direction){
 
             case NORTH:
-                if (!hasObstacles(x,y+1))
-                    y +=1;
+                if (isOutBorder(rover_point.getX(),rover_point.getY()+1)){
+
+                    this.lift();
+                }
+                else if (!hasObstacles(rover_point.getX(),rover_point.getY()+1)){
+
+                    rover_point.setY(rover_point.getY()+1);
+                }
+
                 break;
             case SOUTH:
-                if (!hasObstacles(x,y-1))
-                    y -=1;
+                if (isOutBorder(rover_point.getX(),rover_point.getY()-1)){
+                    this.lift();
+
+                }
+                else if (!hasObstacles(rover_point.getX(),rover_point.getY()-1)) {
+
+                    rover_point.setY(rover_point.getY()-1);
+                }
                 break;
+
             case WEST:
-                if (!hasObstacles(x-1,y))
-                    x -=1;
+                if (isOutBorder(rover_point.getX()-1,rover_point.getY())){
+
+                    this.lift();
+                }
+
+                else if (!hasObstacles(rover_point.getX()-1,rover_point.getY())) {
+
+                    rover_point.setX(rover_point.getX()-1);
+                }
                 break;
+
             case EAST:
-                if (!hasObstacles(x+1,y))
-                    x +=1;
+
+                if (isOutBorder(rover_point.getX()+1,rover_point.getY())){
+                    this.lift();
+
+                }
+                else if (!hasObstacles(rover_point.getX()+1,rover_point.getY())) {
+
+                    rover_point.setX(rover_point.getX()+1);
+
+                }
                 break;
         }
 
@@ -39,8 +72,7 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
 
 
         if (!hasObstacles(x, y)) {
-            this.x = x;
-            this.y = y;
+            this.rover_point = new Point(x, y);
             this.direction = direction;
 
         }
@@ -59,10 +91,15 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
     public void lift() {
 
         this.direction = null;
-        this.x = null;
-        this.y = null;
+        this.rover_point = null;
 
 
+    }
+
+
+    public Point getRover_point(){
+
+        return rover_point;
     }
 
 }

@@ -24,4 +24,23 @@ public class GroundVisor {
 
     }
 
+    public boolean isOutBorder(int x, int y){
+
+        if (x >= ground.getWidth() || y >= ground.getLength()){
+        return  true;
+        }
+        else {
+
+            return false;
+        }
+
+        
+    }
+
+    public Ground getGround(){
+
+        return ground;
+
+    }
+
 }

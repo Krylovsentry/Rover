@@ -22,7 +22,7 @@ public class Ground  {
 
         this.length = length;
         this.width = width;
-        landscape = new GroundCell[length-1][width-1];
+        landscape = new GroundCell[width-1][length-1];
         random = new Random();
 
         for (int i = 0 ; i < landscape.length; i ++){
