@@ -9,7 +9,7 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
 
     @Override
     public String toString() {
-        return rover_point.toString() + "Direction: " + direction.toString();
+        return "Position of Rover { " + rover_point.toString() + "Direction: " + direction.toString() + " }";
     }
 
     @Override

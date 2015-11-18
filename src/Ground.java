@@ -18,7 +18,7 @@ public class Ground  {
 
     }
 
-    public Ground(int length,int width){
+    public Ground(int length, int width){
 
         this.length = length;
         this.width = width;
