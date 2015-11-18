@@ -35,11 +35,7 @@ public class Point {
         return x;
     }
 
-    public int getY(){
-
-        return  y;
-
-    }
+    public int getY() { return  y; }
 
     @Override
     public String toString() {
