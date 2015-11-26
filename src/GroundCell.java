@@ -11,6 +11,7 @@ public class GroundCell {
 
 
 
+
     public GroundCell(int x, int y, CellState state){
         this.x = x;
         this.y = y;

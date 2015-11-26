@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -40,6 +42,34 @@ public class Ground  {
 
 
         }
+    }
+
+
+    public void initialize(List<GroundCell> groundCell){
+
+
+        if (groundCell.size() < (length-1)*(width-1)){
+
+            throw new IllegalArgumentException();
+
+        }
+        else {
+            for (GroundCell gc : groundCell) {
+
+                for (int i = 0; i < landscape.length; i++) {
+                    for (int j = 0; j < landscape[i].length; j++) {
+
+
+                        landscape[i][j] = gc;
+                    }
+
+
+                }
+            }
+
+        }
+
+
     }
 
     public int getLength(){

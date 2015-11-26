@@ -8,34 +8,24 @@ public class GroundVisor {
     private Ground ground;
 
 
-    public boolean hasObstacles(int x, int y){
+    public boolean hasObstacles(int x, int y) throws OutOfGroundException {
 
-        if (ground.getCell(x, y).getState() == CellState.FREE) {
+        if (x < 0 || y < 0 || x > ground.getWidth()-1 || y > ground.getLength()-1 ){
+
+            throw new OutOfGroundException("За границей поверхности. Взлет!");
+
+        }
+        else if (ground.getCell(x, y).getState() == CellState.FREE) {
 
             return false;
         }
 
 
-        else
-        {
-            return true;
-        }
-
+        return true;
 
     }
 
-    public boolean isOutBorder(int x, int y){
 
-        if (x >= ground.getWidth() || y >= ground.getLength() || x < 0 || y < 0 ){
-        return  true;
-        }
-        else {
-
-            return false;
-        }
-
-        
-    }
 
     public Ground getGround(){
 
