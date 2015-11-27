@@ -19,12 +19,6 @@ public class GroundCell {
 
     }
 
-    public void setState(CellState state){
-
-        this.state = state;
-
-    }
-
     public CellState getState(){
 
         return  state;

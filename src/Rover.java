@@ -101,9 +101,10 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
     }
 
 
-    public Point getRover_point(){
+    public void executeProgramFile(String string){
 
-        return rover_point;
+
+
+
     }
-
 }

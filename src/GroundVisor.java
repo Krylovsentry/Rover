@@ -12,7 +12,7 @@ public class GroundVisor {
 
         if (x < 0 || y < 0 || x > ground.getWidth()-1 || y > ground.getLength()-1 ){
 
-            throw new OutOfGroundException("За границей поверхности. Взлет!");
+            throw new OutOfGroundException("За границей поверхности. Летим!");
 
         }
         else if (ground.getCell(x, y).getState() == CellState.FREE) {
@@ -22,14 +22,6 @@ public class GroundVisor {
 
 
         return true;
-
-    }
-
-
-
-    public Ground getGround(){
-
-        return ground;
 
     }
 
