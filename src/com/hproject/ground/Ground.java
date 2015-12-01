@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package com.hproject.ground;
+
 import java.util.List;
 import java.util.Random;
 
@@ -31,7 +32,7 @@ public class Ground  {
             for (int j = 0; j < landscape[i].length; j ++){
 
                 if (random.nextInt(10)==7){
-                    landscape[i][j] = new GroundCell(i,j,CellState.OCCUPIED);
+                    landscape[i][j] = new GroundCell(i,j, CellState.OCCUPIED);
 
                 }else {
 

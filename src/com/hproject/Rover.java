@@ -1,3 +1,5 @@
+package com.hproject;
+
 /**
  * Created by Антон on 13.11.2015.
  */
@@ -9,7 +11,7 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
 
     @Override
     public String toString() {
-        return "Position of Rover { " + rover_point.toString() + "Direction: " + direction.toString() + " }";
+        return "Position of com.hproject.Rover { " + rover_point.toString() + "com.hproject.Direction: " + direction.toString() + " }";
     }
 
     @Override

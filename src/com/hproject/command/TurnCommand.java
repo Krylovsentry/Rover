@@ -1,3 +1,9 @@
+package com.hproject.command;
+
+import com.hproject.Direction;
+import com.hproject.Turnable;
+import com.hproject.command.RoverCommand;
+
 /**
  * Created by Антон on 27.11.2015.
  */
@@ -13,7 +19,7 @@ public class TurnCommand implements RoverCommand {
     }
 
 
-    public TurnCommand(Turnable turnable,Direction direction){
+    public TurnCommand(Turnable turnable, Direction direction){
 
         this.direction = direction;
         this.turnable = turnable;

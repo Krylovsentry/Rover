@@ -1,4 +1,7 @@
+package com.hproject;
 
+import com.hproject.ground.CellState;
+import com.hproject.ground.Ground;
 
 /**
  * Created by Антон on 03.11.2015.

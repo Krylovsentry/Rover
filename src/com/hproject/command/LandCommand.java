@@ -1,7 +1,13 @@
+package com.hproject.command;
+
+import com.hproject.Direction;
+import com.hproject.Landable;
+import com.hproject.command.RoverCommand;
+
 /**
  * Created by Антон on 27.11.2015.
  */
-public class LandCommand implements RoverCommand{
+public class LandCommand implements RoverCommand {
 
     private Landable landable;
     private int x ;
