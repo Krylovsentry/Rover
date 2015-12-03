@@ -1,9 +1,11 @@
 move
 
 move
-
+lift
+land 4 5 south
+move
+move
 turn east
-
 move
 
 move
