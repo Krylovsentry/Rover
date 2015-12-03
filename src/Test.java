@@ -37,6 +37,7 @@ public class Test {
         rover.land(2,4,Direction.NORTH);
         rover.land(2, 7, Direction.WEST);
         rover.executeProgramFile("program.txt");
+        rover.executeProgram("program.txt");
 
     }
 }
