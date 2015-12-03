@@ -1,4 +1,4 @@
-package com.hproject;
+package com.hproject.rover;
 
 import com.hproject.ground.CellState;
 import com.hproject.ground.Ground;
@@ -11,9 +11,15 @@ public class GroundVisor {
     private Ground ground;
 
 
+    public GroundVisor(Ground ground){
+
+        this.ground = ground;
+
+    }
+
     public boolean hasObstacles(int x, int y) throws OutOfGroundException {
 
-        if (x < 0 || y < 0 || x > ground.getWidth()-1 || y > ground.getLength()-1 ){
+        if (x < 0 || y < 0 || x > ground.getWidth()-1 || y >= ground.getLength()-1 ){
 
             throw new OutOfGroundException("За границей поверхности. Летим!");
 
@@ -27,5 +33,7 @@ public class GroundVisor {
         return true;
 
     }
+
+
 
 }

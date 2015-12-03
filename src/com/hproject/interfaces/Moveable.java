@@ -1,4 +1,4 @@
-package com.hproject;
+package com.hproject.interfaces;
 
 /**
  * Created by Антон on 03.11.2015.

@@ -1,7 +1,7 @@
 package com.hproject.command;
 
-import com.hproject.Moveable;
-import com.hproject.command.RoverCommand;
+import com.hproject.interfaces.Moveable;
+import com.hproject.interfaces.RoverCommand;
 
 /**
  * Created by Антон on 27.11.2015.

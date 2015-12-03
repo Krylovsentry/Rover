@@ -1,4 +1,4 @@
-package com.hproject;
+package com.hproject.rover;
 
 /**
  * Created by Антон on 17.11.2015.

@@ -1,8 +1,8 @@
 package com.hproject.command;
 
-import com.hproject.Direction;
-import com.hproject.Landable;
-import com.hproject.command.RoverCommand;
+import com.hproject.rover.Direction;
+import com.hproject.interfaces.Landable;
+import com.hproject.interfaces.RoverCommand;
 
 /**
  * Created by Антон on 27.11.2015.
