@@ -11,6 +11,7 @@ public class ProgrammableRover extends Rover {
     public void executeProgram(String string){
 
 
+        RoverCommandParser parser = new RoverCommandParser(this, string);
 
 
     }

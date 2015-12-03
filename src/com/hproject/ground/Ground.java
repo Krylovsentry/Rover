@@ -49,7 +49,7 @@ public class Ground  {
     public void initialize(List<GroundCell> groundCell){
 
 
-        if (groundCell.size() < (length-1)*(width-1)){
+        if (groundCell.size() < (length)*(width)){
 
             throw new IllegalArgumentException();
 
