@@ -29,25 +29,24 @@ public class RoverCommandParser {
 
         while (in.hasNext()){
 
-            String nextLine = in.nextLine();
-            if (nextLine.equalsIgnoreCase("move")){
+            String[] nextLine = in.nextLine().split(" ");
+
+            if (nextLine[0].equalsIgnoreCase("move")){
 
                 commandList.add(new MoveCommand(rover));
 
-            }else  if (nextLine.equalsIgnoreCase("lift")){
+            }else  if (nextLine[0].equalsIgnoreCase("lift")){
 
                 commandList.add(new LiftCommand(rover));
 
-            } else if (nextLine.substring(0,5).equalsIgnoreCase("land")){
+            } else if (nextLine[0].equalsIgnoreCase("land")){
 
-                String [] sub = nextLine.split(" ");
-                commandList.add(new LandCommand(rover,Integer.parseInt(sub[1]),Integer.parseInt(sub[2]),Direction.valueOf(sub[3].toUpperCase())));
 
-            } else  if (nextLine.substring(0,5).equalsIgnoreCase("turn")){
+                commandList.add(new LandCommand(rover,Integer.parseInt(nextLine[1]),Integer.parseInt(nextLine[2]),Direction.valueOf(nextLine[3].toUpperCase())));
 
-                String [] sub = nextLine.split(" ");
+            } else  if (nextLine[0].equalsIgnoreCase("turn")){
 
-                commandList.add(new TurnCommand(rover,Direction.valueOf(sub[1].toUpperCase())));
+                commandList.add(new TurnCommand(rover,Direction.valueOf(nextLine[1].toUpperCase())));
 
 
             }

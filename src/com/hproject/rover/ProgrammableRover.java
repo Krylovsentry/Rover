@@ -49,9 +49,13 @@ public class ProgrammableRover extends Rover {
         super.lift();
     }
 
-    public void executeProgram(String string) throws FileNotFoundException {
+    public void executeProgram(String string)  {
 
-        commandList = new RoverCommandParser(this,string).readCommands();
+        try {
+            commandList = new RoverCommandParser(this,string).readCommands();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         for (RoverCommand roverCommand : commandList){
 
             roverCommand.execute();

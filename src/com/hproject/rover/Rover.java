@@ -98,8 +98,10 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
 
             try {
                 if (!hasObstacles(x, y)) {
+
                     this.rover_point = new Point(x, y);
                     this.direction = direction;
+                    System.out.println("Приземление");
                     System.out.println(this.toString());
 
                 }
@@ -134,29 +136,34 @@ public class Rover extends GroundVisor implements Moveable,Landable,Turnable,Lif
     }
 
 
-    public void executeProgramFile(String string) throws FileNotFoundException {
+    public void executeProgramFile(String string) {
 
-        Scanner in = new Scanner(new File(string));
+        Scanner in = null;
+        try {
+            in = new Scanner(new File(string));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         while (in.hasNext()){
 
-            String nextLine = in.nextLine();
-            if (nextLine.equalsIgnoreCase("move")){
+            String[] nextLine = in.nextLine().split(" ");
+            if (nextLine[0].equalsIgnoreCase("move")){
 
                 this.move();
 
-            }else  if (nextLine.equalsIgnoreCase("lift")){
+            }else  if (nextLine[0].equalsIgnoreCase("lift")){
 
                 this.lift();
 
-            } else if (nextLine.substring(0,5).equalsIgnoreCase("land")){
+            } else if (nextLine[0].equalsIgnoreCase("land")){
 
-                String [] sub = nextLine.split(" ");
-                this.land(Integer.parseInt(sub[1]),Integer.parseInt(sub[2]),Direction.valueOf(sub[3].toUpperCase()));
+                this.land(Integer.parseInt(nextLine[1]),Integer.parseInt(nextLine[2]),Direction.valueOf(nextLine[3].toUpperCase()));
 
-            } else  if (nextLine.substring(0,5).equalsIgnoreCase("turn")){
+            } else  if (nextLine[0].equalsIgnoreCase("turn")){
 
-                String [] sub = nextLine.split(" ");
-                this.turnTo(Direction.valueOf(sub[1].toUpperCase()));
+                this.turnTo(Direction.valueOf(nextLine[1].toUpperCase()));
             }
 
 

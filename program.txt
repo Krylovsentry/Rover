@@ -1,0 +1,15 @@
+move
+
+move
+
+turn east
+
+move
+
+move
+
+lift
+
+land 2 0 west
+
+move
